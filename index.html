@@ -8387,8 +8387,10 @@ body.page-transitioning::before {
 
 .pp-rounds {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .pp-round {
@@ -17685,6 +17687,13 @@ function toggleTechnicalDebateFAQ(button) {
                 </p>
             </div>
 
+            <div class="pp-info-card">
+                <i class="fas fa-list-ol"></i>
+                <small>NUMBER OF ROUNDS</small>
+                <h3>2 Rounds</h3>
+                <p>Preliminary screening and final presentation.</p>
+            </div>
+
         </div>
 
     </section>
@@ -17706,26 +17715,9 @@ function toggleTechnicalDebateFAQ(button) {
 
                 <div>
                     <small>ROUND 1</small>
-                    <h3>PRELIMINARY / SCREENING</h3>
+                    <h3>PRELIMINARY / SCREENING ROUND</h3>
                     <p>
-                        Submitted papers are checked and the
-                        best/eligible papers are shortlisted.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="pp-round">
-
-                <div class="pp-round-number">02</div>
-
-                <div>
-                    <small>ROUND 2</small>
-                    <h3>PRESENTATION ROUND</h3>
-                    <p>
-                        Shortlisted participants present their
-                        papers before the judging panel.
+                        Submitted papers are checked and the best/eligible papers are shortlisted.
                     </p>
                 </div>
 
@@ -17740,10 +17732,8 @@ function toggleTechnicalDebateFAQ(button) {
 
                 <div>
                     <small>FINAL ROUND</small>
-                    <h3>FINAL PRESENTATION</h3>
-                    <p>
-                        Top participants compete for the winning positions.
-                    </p>
+                    <h3>PRESENTATION ROUND</h3>
+                    <p>Participants present their papers.</p>
                 </div>
 
             </div>
@@ -17799,7 +17789,7 @@ function toggleTechnicalDebateFAQ(button) {
                 <div class="pp-time-dot"></div>
                 <div>
                     <small>FINAL EVENT</small>
-                    <h3>22nd October 2026</h3>
+                    <h3>22nd October</h3>
                 </div>
             </div>
 
@@ -17835,71 +17825,81 @@ function toggleTechnicalDebateFAQ(button) {
 
             <div class="pp-rule">
                 <b>02</b>
-                <p>Participants must complete the official registration process before the specified deadline.</p>
+                <p>All participants must bring their research paper in PDF format on a USB flash drive (pen drive) for the presentation.</p>
             </div>
 
             <div class="pp-rule">
                 <b>03</b>
-                <p>The paper must be based on a technical, scientific, digital, AI, computing, cybersecurity, or other technology-related topic.</p>
+                <p>All participants and their respective team members must report to the venue on time to ensure the smooth and uninterrupted conduct of the presentation sessions.</p>
             </div>
 
             <div class="pp-rule">
                 <b>04</b>
-                <p>The paper title/topic and abstract must be submitted according to the instructions provided by the organizers.</p>
+                <p>Participants must complete the official registration process before the specified deadline.</p>
             </div>
 
             <div class="pp-rule">
                 <b>05</b>
-                <p>The presentation must be completed within the allotted time, normally 8–10 minutes.</p>
+                <p>The paper must be based on a technical, scientific, digital, AI, computing, cybersecurity, or other technology-related topic.</p>
             </div>
 
             <div class="pp-rule">
                 <b>06</b>
-                <p>Participants should clearly explain the problem statement, objectives, methodology, key findings/ideas, and conclusion.</p>
+                <p>The paper title/topic and abstract must be submitted according to the instructions provided by the organizers.</p>
             </div>
 
             <div class="pp-rule">
                 <b>07</b>
-                <p>Participants may use factual examples, statistics, diagrams, technical concepts, and real-world applications to support their presentation.</p>
+                <p>The presentation must be completed within the allotted time, normally 8–10 minutes.</p>
             </div>
 
             <div class="pp-rule">
                 <b>08</b>
-                <p>The presentation must be original and technically accurate. Plagiarism, deliberate misinformation, or misrepresentation of technical facts may lead to disqualification.</p>
+                <p>Participants should clearly explain the problem statement, objectives, methodology, key findings/ideas, and conclusion.</p>
             </div>
 
             <div class="pp-rule">
                 <b>09</b>
-                <p>Participants must answer questions from the judging panel during the Q&A session.</p>
+                <p>Participants may use factual examples, statistics, diagrams, technical concepts, and real-world applications to support their presentation.</p>
             </div>
 
             <div class="pp-rule">
                 <b>10</b>
-                <p>Personal remarks, offensive language, discrimination, disrespectful behaviour, or inappropriate content are strictly prohibited.</p>
+                <p>The presentation must be original and technically accurate. Plagiarism, deliberate misinformation, or misrepresentation of technical facts may lead to disqualification.</p>
             </div>
 
             <div class="pp-rule">
                 <b>11</b>
-                <p>The use of mobile phones, internet sources, or other external aids during the presentation will be permitted only if explicitly allowed by the organizers.</p>
+                <p>Participants must answer questions from the judging panel during the Q&A session.</p>
             </div>
 
             <div class="pp-rule">
                 <b>12</b>
-                <p>Participants must report to the venue before the assigned reporting time.</p>
+                <p>Personal remarks, offensive language, discrimination, disrespectful behaviour, or inappropriate content are strictly prohibited.</p>
             </div>
 
             <div class="pp-rule">
                 <b>13</b>
-                <p>Late arrival may result in disqualification or denial of participation, at the discretion of the organizers.</p>
+                <p>The use of mobile phones, internet sources, or other external aids during the presentation will be permitted only if explicitly allowed by the organizers.</p>
             </div>
 
             <div class="pp-rule">
                 <b>14</b>
-                <p>Participants must follow all instructions given by the event coordinators and judging panel.</p>
+                <p>Participants must report to the venue before the assigned reporting time.</p>
             </div>
 
             <div class="pp-rule">
                 <b>15</b>
+                <p>Late arrival may result in disqualification or denial of participation, at the discretion of the organizers.</p>
+            </div>
+
+            <div class="pp-rule">
+                <b>16</b>
+                <p>Participants must follow all instructions given by the event coordinators and judging panel.</p>
+            </div>
+
+            <div class="pp-rule">
+                <b>17</b>
                 <p>The decision of the judging panel shall be final and binding.</p>
             </div>
 
@@ -18051,8 +18051,7 @@ function toggleTechnicalDebateFAQ(button) {
                 </button>
 
                 <div class="pp-faq-answer">
-                    Eligible students from engineering and technology-related
-                    fields, as permitted by the event organizers.
+                    Eligible students from engineering/technology-related fields, as permitted by the event organizers.
                 </div>
 
             </div>
@@ -18139,8 +18138,7 @@ function toggleTechnicalDebateFAQ(button) {
                 </button>
 
                 <div class="pp-faq-answer">
-                    College ID card, presentation materials and any permitted
-                    notes/materials required for preparation.
+                    College ID card, presentation materials, and the research paper in PDF format on a USB flash drive (pen drive). Bring any other permitted materials required for the presentation.
                 </div>
 
             </div>
@@ -18154,8 +18152,7 @@ function toggleTechnicalDebateFAQ(button) {
                 </button>
 
                 <div class="pp-faq-answer">
-                    Participants will generally select or submit a topic
-                    according to the given topics.
+                    Participants will generally select or submit a topic according to the instructions and topics provided by the organizers.
                 </div>
 
             </div>
