@@ -11210,7 +11210,7 @@ header nav a.active::after { height: 1px !important; }
       <div><span class="bgmi-meta-label">DATE</span><strong>22–23 October</strong></div>
       <div><span class="bgmi-meta-label">VENUE</span><strong>AI &amp; DS Building</strong></div>
       <div><span class="bgmi-meta-label">ORGANIZER</span><strong>Sophia Forum · AI &amp; DS Department</strong></div>
-      <div><span class="bgmi-meta-label">ENTRY FEE</span><strong>₹120 per team</strong></div>
+      <div><span class="bgmi-meta-label">ENTRY FEE</span><strong>Free</strong></div>
     </div>
 
     <div class="bgmi-info-section">
@@ -11325,7 +11325,7 @@ header nav a.active::after { height: 1px !important; }
 <!-- ========================= BGMI TOURNAMENT FULL EVENT PAGE ========================= -->
 <div id="bgmiTournamentPage" class="shark-page bgmi-full-page">
   <button class="shark-back" type="button" onclick="closeBGMIInfo()">
-    <i class="fa-solid fa-arrow-left"></i> BACK TO DAY 2
+    <i class="fa-solid fa-arrow-left"></i> BACK
   </button>
 
   <a class="top-register-btn bgmi-register-btn"
@@ -11342,7 +11342,7 @@ header nav a.active::after { height: 1px !important; }
       <div><i class="fa-solid fa-location-dot"></i><span>AI &amp; DS Building</span></div>
       <div><i class="fa-solid fa-calendar"></i><span>22–23 October 2026</span></div>
       <div><i class="fa-solid fa-users"></i><span>4 Players + 1 Substitute</span></div>
-      <div><i class="fa-solid fa-ticket"></i><span>₹120 per team</span></div>
+      <div><i class="fa-solid fa-ticket"></i><span>Entry Free</span></div>
     </div>
   </section>
 
@@ -11413,7 +11413,7 @@ header nav a.active::after { height: 1px !important; }
     <div class="shark-section-title"><span>07</span><h2>REGISTRATION &amp; CONTACT</h2></div>
     <div class="shark-about">
       <div class="shark-about-main">
-        <p><b>Entry fee: ₹120 per team.</b> Teams must complete the official registration form with all required details.</p>
+        <p><b>Entry is free.</b> Teams must complete the official registration form with all required details.</p>
         <p>No individual is permitted to solicit or collect entry fees from participants. Violations may result in disciplinary action, removal from the event and further action as deemed appropriate by the organizing committee.</p>
         <p>All players must follow the tournament organizers’ general code of conduct. Please follow official organizer instructions for registration deadlines and payment procedure.</p>
       </div>
@@ -19395,9 +19395,23 @@ body.site-view-contact #main-website > #contact,
 }
 </style>
 <script id="bgmi-full-page-navigation">
+/* Remember which event list opened BGMI, so BACK returns to that same day. */
+window.bgmiReturnDay = 'day1';
 window.openBGMIInfo = function() {
   const page = document.getElementById('bgmiTournamentPage');
   if (!page) return;
+  if (document.body.classList.contains('site-view-day2')) {
+    window.bgmiReturnDay = 'day2';
+  } else if (document.body.classList.contains('site-view-day1')) {
+    window.bgmiReturnDay = 'day1';
+  } else {
+    const day2 = document.getElementById('day2');
+    const day1 = document.getElementById('day1');
+    const day2Visible = day2 && day2.getBoundingClientRect().top < window.innerHeight && day2.getBoundingClientRect().bottom > 0;
+    const day1Visible = day1 && day1.getBoundingClientRect().top < window.innerHeight && day1.getBoundingClientRect().bottom > 0;
+    if (day2Visible && !day1Visible) window.bgmiReturnDay = 'day2';
+    else if (day1Visible) window.bgmiReturnDay = 'day1';
+  }
   page.classList.add('open');
   document.body.classList.add('bgmi-page-open');
   document.body.style.overflow = 'hidden';
@@ -19408,9 +19422,10 @@ window.closeBGMIInfo = function() {
   if (page) page.classList.remove('open');
   document.body.classList.remove('bgmi-page-open');
   document.body.style.overflow = '';
-  const day2 = document.getElementById('day2');
-  if (typeof window.setActiveSiteView === 'function') window.setActiveSiteView('day2');
-  if (day2) requestAnimationFrame(() => day2.scrollIntoView({behavior:'smooth', block:'start'}));
+  const returnDay = window.bgmiReturnDay === 'day2' ? 'day2' : 'day1';
+  const target = document.getElementById(returnDay);
+  if (typeof window.setActiveSiteView === 'function') window.setActiveSiteView(returnDay);
+  if (target) requestAnimationFrame(() => target.scrollIntoView({behavior:'smooth', block:'start'}));
 };
 </script>
 
